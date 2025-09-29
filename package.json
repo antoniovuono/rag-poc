@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsx src/cli.ts",
-    "lint": "eslint . --ext .js,.ts"
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint --fix . --ext .js,.ts"
   },
   "keywords": [],
   "author": "",
