@@ -17,17 +17,21 @@ export class RagService {
   }
 
   public async initialize() {
-    console.log('Inicializando o Service ....');
+    console.log('Initializing RAG Service...');
 
-    // 1. Load document (pdf)
+    // 1. Load PDF document from the knowledge base path
     const loader = new PDFLoader(this.config.knowledgeBasePath);
     const docs = await loader.load();
 
-    // 2. Split document
+    // 2. Split document into smaller chunks for better processing
     const splitter = new RecursiveCharacterTextSplitter(this.config.textSplitter);
 
     const splitDocs = await splitter.splitDocuments(docs);
 
-    console.log('documento dividido!', splitDocs);
+    console.log('Document successfully split into chunks:', splitDocs);
+
+    // 3. Create embeddings and store them in a vector database
+
+    // 4. Create retrieval chain for question answering
   }
 }
